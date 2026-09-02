@@ -4,7 +4,7 @@ public:
         deque<int> q;vector<int> ans;
         for(int i=0;i<k;i++)
         {
-            if(!q.empty() && q.back()>=nums[i]) q.push_back(i);
+            if(!q.empty() && nums [q.back()]>=nums[i]) q.push_back(i);
             else
             {
                 while(!q.empty() && nums[q.back()]<nums[i])
@@ -14,11 +14,11 @@ public:
                 q.push_back(i);
             }
         }
-        ans.push_back(nums[q[0]]);
+        ans.push_back(nums[q.front()]);
         for(int i=k;i<nums.size();i++)
         {
             if(!q.empty() && q.front()<=i-k) q.pop_front();
-            if(!q.empty() && q.back()>=nums[i]) q.push_back(i);
+            if(!q.empty() && nums[q.back()]>=nums[i]) q.push_back(i);
             else
             {
                 while(!q.empty() && nums[q.back()]<nums[i])
@@ -27,7 +27,7 @@ public:
                 }
                 q.push_back(i);
             }
-            ans.push_back(nums[q[0]]);    
+            ans.push_back(nums[q.front()]);    
         }
         return ans;
     }
