@@ -24,11 +24,12 @@ public:
             n=n+1;
         }
         n=rand()%n;
+        temp=list;
         for(int i=0;i<n;i++)
         {
-            list=list->next;
+            temp=temp->next;
         }
-        return list->val;
+        return temp->val;
     }
 };
 
