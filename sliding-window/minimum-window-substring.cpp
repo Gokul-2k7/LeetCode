@@ -26,7 +26,7 @@ public:
                     }
                     if(d1.contains(s[i]))
                     {   
-                        if(d1[s[i]]<=d2[s[j]]) formed--;
+                        if(d1[s[i]]<=d2[s[i]]) formed--;
                         d1[s[i]]-=1;
                          if(d1[s[i]]==0) d1.erase(s[i]);
                     }
