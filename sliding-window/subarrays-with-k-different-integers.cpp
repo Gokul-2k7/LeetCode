@@ -17,7 +17,7 @@ public:
             count+=j-i+1;
             j++;
         }
-        i=0;j=0;int count2=0;
+        i=0;j=0;
         d.clear();
         k--;
         while(j<nums.size() && i<=j)
@@ -30,9 +30,9 @@ public:
                 if(d[nums[i]]==0) d.erase(nums[i]);
                 i++;
             }
-            count2+=j-i+1;
+            count-=j-i+1;
             j++;
         }
-        return count-count2;
+        return count;
     }
 };
